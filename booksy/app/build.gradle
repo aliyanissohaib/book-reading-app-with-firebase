@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion 32
+    defaultConfig {
+        applicationId "com.demo.myfirestore"
+        minSdkVersion 21
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-auth:21.0.6'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.firebase:firebase-firestore:24.2.0'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.google.firebase:firebase-messaging:23.0.6'
+    implementation 'com.google.firebase:firebase-storage:20.0.1'
+    // implementation 'com.google.firebase:firebase-auth:16.0.3'
+    implementation 'com.google.firebase:firebase-core:21.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.firebase:firebase-database:20.0.5'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.airbnb.android:lottie:5.2.0'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    // Add the In-App Messaging dependency:
+    implementation 'com.google.firebase:firebase-inappmessaging-display:20.1.2'
+
+    // Check that Firebase core is up-to-date:
+    implementation 'com.google.firebase:firebase-core:21.0.0'
+
+
+}
+apply plugin: 'com.google.gms.google-services'
